@@ -17,7 +17,7 @@
             top: 20px;
             left: 20px;
             z-index: 999;
-            font-size: 1.5rem;
+            font-size: 3rem;
         }
         .counters-wrapper {
             display: flex;
@@ -25,15 +25,25 @@
             gap: 20px;
             padding-top: 80px;
             justify-content: center;
+            min-width: 300px;
         }
         .counter-card {
-            width: 260px;
+            min-width: 400px;
+            width: 100%;
+            max-width: 500px;
         }
+
+        .counter-card .btn {
+            padding: 20px;
+            font-size: 3rem;
+        }
+
+
         .count-display {
-            font-size: 2.5rem;
+            font-size: 4rem;
         }
         .btn-sm i {
-            font-size: 1.2rem;
+            font-size: 3rem;
         }
         .reset-message {
             opacity: 0;
@@ -45,7 +55,7 @@
         }
         .title-input {
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 3rem;
             border: none;
             text-align: center;
             width: 100%;
@@ -75,7 +85,7 @@
             const container = document.getElementById('countersContainer');
 
             const card = document.createElement('div');
-            card.className = 'card shadow-sm p-3 text-center counter-card';
+            card.className = 'card shadow-lg p-3 text-center counter-card';
 
             const countId = `count-${counterId}`;
             const messageId = `message-${counterId}`;
