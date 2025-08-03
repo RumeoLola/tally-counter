@@ -1,49 +1,58 @@
 body {
     background-color: #f8f9fa;
     font-size: 14px;
-    }
+}
+
 .add-counter-btn {
     position: fixed;
     top: 20px;
     left: 20px;
     z-index: 999;
-    font-size: 3rem;
-    }
+    font-size: 2.5rem;
+}
+
 .counters-wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding-top: 80px;
+    padding-top: 120px;
+    padding-bottom: 60px;  /* Space at bottom */
     justify-content: center;
     min-width: 300px;
-    }
+}
+
 .counter-card {
-    min-width: 525px;
+    min-width: 300px;
     width: 100%;
-    height: auto;
     max-width: 550px;
-    }
+}
+
 .counter-card .btn {
-    padding: 20px;
-    font-size: 3rem;
-    }
+    padding: 16px;
+    font-size: 2.2rem;
+}
+
 .count-display {
-    font-size: 3rem;
-    }
+    font-size: 2.5rem;
+}
+
 .btn-sm i {
-    font-size: 3rem;
-    }
+    font-size: 2.2rem;
+}
+
 .reset-message {
     opacity: 0;
     transition: opacity 1s ease-out;
-    font-size: 3rem;
-    }
+    font-size: 2.2rem;
+}
+
 .reset-message.show {
     opacity: 1;
-    }
+}
+
 .title-input {
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 2.5rem;
     border: none;
     text-align: center;
     width: 100%;
@@ -51,4 +60,53 @@ body {
     outline: none;
     border-bottom: 1px dashed #ccc;
     margin-bottom: 10px;
+}
+
+/* Shared style for icon buttons (close and collapse) */
+.icon-button {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0.5rem;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.icon-button:hover {
+    color: #000;
+    background: none;
+}
+
+/* Responsive Adjustments for Small Screens */
+@media screen and (max-width: 576px) {
+    .add-counter-btn {
+        font-size: 2rem;
     }
+
+    .counter-card {
+        min-width: 90%;
+    }
+
+    .counter-card .btn {
+        padding: 12px;
+        font-size: 1.5rem;
+    }
+
+    .btn-sm i,
+    .count-display,
+    .title-input,
+    .reset-message {
+        font-size: 1.5rem;
+        padding: 12px;
+    }
+
+    .title-input {
+        margin-bottom: 15px;
+    }
+
+    .icon-button {
+        font-size: 1.5rem;
+        padding: 0.3rem;
+    }
+}
