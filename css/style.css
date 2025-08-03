@@ -1,0 +1,54 @@
+body {
+    background-color: #f8f9fa;
+    font-size: 14px;
+    }
+.add-counter-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+    font-size: 3rem;
+    }
+.counters-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 80px;
+    justify-content: center;
+    min-width: 300px;
+    }
+.counter-card {
+    min-width: 525px;
+    width: 100%;
+    height: auto;
+    max-width: 550px;
+    }
+.counter-card .btn {
+    padding: 20px;
+    font-size: 3rem;
+    }
+.count-display {
+    font-size: 3rem;
+    }
+.btn-sm i {
+    font-size: 3rem;
+    }
+.reset-message {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    font-size: 3rem;
+    }
+.reset-message.show {
+    opacity: 1;
+    }
+.title-input {
+    font-weight: bold;
+    font-size: 3rem;
+    border: none;
+    text-align: center;
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 10px;
+    }
