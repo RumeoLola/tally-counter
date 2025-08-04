@@ -37,7 +37,7 @@ function addCounter() {
         </div>
     `;
 
-    container.appendChild(card);
+    container.insertBefore(card, container.firstChild);
 }
 
 function increment(id) {
