@@ -10,16 +10,16 @@ function addCounter() {
 
     const countId = `count-${counterId}`;
     const messageId = `message-${counterId}`;
-    const collapseId = `collapse-${counterId}`;
+    const contentDivId = `content-${counterId}`; // Changed from collapseId for clarity
 
     card.innerHTML = `
         <div class="d-flex justify-content-between align-items-center mb-2">
             <button type="button" class="btn-close" aria-label="Close" onclick="this.closest('.card').remove()" style="transform: scale(2);"></button>
-            <button class="icon-button" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-expanded="true" aria-controls="${collapseId}">
+            <button class="icon-button" type="button" onclick="toggleCounterCollapse(this, '${contentDivId}')">
                 <i class="fas fa-minus"></i>
             </button>
         </div>
-        <div id="${collapseId}" class="collapse show">
+        <div id="${contentDivId}" class="counter-content show-content">
             <input type="text" class="title-input" placeholder="Enter title..." />
             <div id="${countId}" class="count-display mt-2">0</div>
             <div class="mt-3 d-grid gap-2 col-8 mx-auto">
@@ -39,6 +39,24 @@ function addCounter() {
 
     container.insertBefore(card, container.firstChild);
 }
+
+// New function to handle both icon and card collapse
+function toggleCounterCollapse(button, contentDivId) {
+    const icon = button.querySelector('i');
+    const card = button.closest('.card');
+    const contentDiv = document.getElementById(contentDivId);
+
+    // Toggle the icon
+    icon.classList.toggle('fa-minus');
+    icon.classList.toggle('fa-plus');
+
+    // Toggle the 'is-collapsed' class on the card for height transition
+    card.classList.toggle('is-collapsed');
+
+    // Toggle the 'show-content' class on the content div for visibility
+    contentDiv.classList.toggle('show-content');
+}
+
 
 function increment(id) {
     if (!counts[id]) counts[id] = 0;

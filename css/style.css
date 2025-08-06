@@ -31,12 +31,25 @@ body {
     border-radius: 0.25rem;
     background: white;
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    transition: all 0.3s ease-in-out;
 }
 
 .counter-card.collapsed {
     max-height: 100px; /* enough for header only */
     padding: 10px 20px;
     margin-bottom: 10px;
+}
+
+.counter-card.is-collapsed {
+    max-height: 100px; /* Enough for header only */
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+/* Remove the .counter-card.collapsed styles */
+.collapse:not(.show) {
+    height: 0;
+    overflow: hidden;
 }
 
 .counter-card .btn {
