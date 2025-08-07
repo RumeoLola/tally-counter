@@ -80,5 +80,27 @@ function reset(countId, messageId) {
     }, 2500);
 }
 
+// Download
+function downloadSnapshot() {
+    const counters = document.querySelectorAll('.counter-card');
+    const snapshot = [];
+
+    counters.forEach(card => {
+        const title = card.querySelector('.title-input')?.value || "Untitled";
+        const count = card.querySelector('.count-display')?.textContent || "0";
+        snapshot.push({ title, count });
+    });
+
+    const blob = new Blob([JSON.stringify(snapshot, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `tally_snapshot_${new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-')}.json`;
+    a.click();
+
+    URL.revokeObjectURL(url);
+}
+
 // Automatically add the first counter on page load
 window.onload = addCounter;
